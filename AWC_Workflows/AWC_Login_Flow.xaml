@@ -86,7 +86,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Variant_URL" CacheStrategy="None" DisplayName="Get Asset" FolderPath="Variant_Matrix" sap:VirtualizedContainerService.HintSize="738,184.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Variant_Matrix_Rajesh_Env" CacheStrategy="None" DisplayName="Get Asset" FolderPath="Variant_Matrix" sap:VirtualizedContainerService.HintSize="738,184.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
       </ui:GetRobotAsset.Value>

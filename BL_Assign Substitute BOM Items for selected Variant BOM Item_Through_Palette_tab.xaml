@@ -1,13 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.in_PL_ID="000348" this:TestCase.in_Substitute_ID="000372" this:TestCase.in_Select_Part="000351*" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.in_PL_ID="000563" this:TestCase.in_Select_Part="000568*" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_PL_ID" Type="InArgument(x:String)" />
-    <x:Property Name="in_Substitute_ID" Type="InArgument(x:String)" />
     <x:Property Name="in_Select_Part" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1189.3333333333333,5360.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1170,9632</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -42,6 +41,9 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -91,15 +93,21 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="512,5296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="608,9567.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Running on &quot;+Environment.UserName.ToString]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,94" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Running on &quot;+Environment.UserName.ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -107,7 +115,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome.exe">
+    <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="546,94" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome.exe">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -115,7 +123,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:KillProcess>
-    <TryCatch DisplayName="Try Catch - Login to AWC" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch - Login to AWC" sap:VirtualizedContainerService.HintSize="546,94" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -159,24 +167,21 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Teamcenter'" sap:VirtualizedContainerService.HintSize="450,4755.333333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="6e8e928ddf6734e14cef9b65dd80eb44" Selector="&lt;html app='chrome.exe' title='Teamcenter*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Teamcenter'" sap:VirtualizedContainerService.HintSize="546,9026.666666666666" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="6e8e928ddf6734e14cef9b65dd80eb44" Selector="&lt;html app='chrome.exe' title='Teamcenter*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,4568" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="type" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,8839.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Folder option on Home Page&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on Folder option on Home Page" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Folder option on Home Page&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on Folder option on Home Page" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -198,8 +203,195 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opening Product Line which is already created&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Select Product Line" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <Sequence DisplayName="Copy Substitute" sap:VirtualizedContainerService.HintSize="450,4193.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="in_Substitute_ID" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_47" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on New command on Right wall&quot;]" />
+              <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2000" DisplayName="Click on New Command" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_35" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22aeaabd-48c2-4674-9f78-b546edc63b46" InformativeScreenshot="01af96d763b53340902e6e54aeda3df7" Selector="&lt;webctrl aaname='New' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_48" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Add option&quot;]" />
+              <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on Add option" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_36" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22aeaabd-48c2-4674-9f78-b546edc63b46" InformativeScreenshot="6b74f65f9066b0d3c05ab7b63557a688" Selector="&lt;webctrl tag='LI' innertext='Add' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Type as Part on Add panel&quot;]" />
+              <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="500" DelayMS="3000" DisplayName="Selecting Type as Part" EmptyField="True" sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="Part[k(enter)]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6483c911-fdb0-41ed-b09c-a9f25f25014e" InformativeScreenshot="e2d45b71b695ea198a0412031be6bc9b" Selector="&lt;webctrl tag='INPUT' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text of Substitute" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                <ui:GetValue.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4ae7e7ad-6970-4469-b148-1ed40ddc1169" InformativeScreenshot="fd3daf1fec8a77270f1633f5c8065d44" Selector="&lt;webctrl name='item_id' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetValue.Target>
+                <ui:GetValue.Value>
+                  <OutArgument x:TypeArguments="x:String">[in_Substitute_ID]</OutArgument>
+                </ui:GetValue.Value>
+              </ui:GetValue>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Entering Name on Add panel&quot;]" />
+              <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="500" DelayMS="1000" DisplayName="Entering Name on Add panel" sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[&quot;A_Substitute_&quot;+system.datetime.now.tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6483c911-fdb0-41ed-b09c-a9f25f25014e" InformativeScreenshot="a759aab429af0f660d77b7d19e116220" Selector="&lt;webctrl name='object_name' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Entering Descrinption on Add panel&quot;]" />
+              <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DelayBefore="200" DelayMS="1000" DisplayName="Entering Name on Add panel" sap:VirtualizedContainerService.HintSize="388,197.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[&quot;Substitute_Description_&quot;+system.datetime.now.tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6483c911-fdb0-41ed-b09c-a9f25f25014e" InformativeScreenshot="eb8f21f386396ac1ac24ab12a5e5007e" Selector="&lt;webctrl name='object_desc' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_52" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Add button of Add panel&quot;]" />
+              <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2000" DisplayName="Click on New command" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_37" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c5366187-61f8-47eb-8760-60b23801eeb8" InformativeScreenshot="362346a6545643909a3bc82a0b8c9e61" Selector="&lt;webctrl aaname='Add' parentid='aw_toolsAndInfo' type='button' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Substitute created Successfully&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Substitute created with ID is :: &quot;+in_Substitute_ID]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting substitute and copying it&quot;]" />
+              <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="8000" DelayMS="3000" DisplayName="Selecting Substitute" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_38" KeyModifiers="None" MouseButton="BTN_RIGHT" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="792f4a9c-2fc0-44d8-b8c8-f9add16f4e7a" InformativeScreenshot="8ab78c8d75a63d930d71a7e03c7b6b4f" Selector="[string.Format(&quot;&lt;webctrl aaname='{0}' /&gt;&quot;, in_Substitute_ID)]">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Click.Target>
+              </ui:Click>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selected Substitute ID is :: &quot;+in_Substitute_ID]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Right Click on Substitute&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Copy option&quot;]" />
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,176.66666666666666" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="down" KeyModifiers="None" SpecialKey="True">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="0383caa6-2671-494a-b223-c9701b718154">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayMS="8000" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="388,176.66666666666666" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="enter" KeyModifiers="None" SpecialKey="True">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="0383caa6-2671-494a-b223-c9701b718154">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Substitute Copied Successfully&quot;]" />
+            </Sequence>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Product Line&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="2500" DisplayName="Select Product Line" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_33" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -221,8 +413,9 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Open command on right wall&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click on Open command" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_44" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opening selected Product Line&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Open command on right wall&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click on Open command" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_34" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -234,7 +427,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0c1e86ad-18ae-4abe-b57a-cc78f4a88c54" InformativeScreenshot="d47cbef1105fd5e2ac0b5854816b4594" Selector="&lt;webctrl tag='BUTTON' type='button' aaname='Open' idx='2' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0c1e86ad-18ae-4abe-b57a-cc78f4a88c54" InformativeScreenshot="d47cbef1105fd5e2ac0b5854816b4594" Selector="&lt;webctrl type='button' aaname='Open' idx='2' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -244,31 +437,66 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on another Open option&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on another Open option" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c5366187-61f8-47eb-8760-60b23801eeb8" InformativeScreenshot="bad371906d86fbafa9e6e2d2a98b3dc8" Selector="&lt;webctrl aria-role='button' tag='LI' visibleinnertext='Open' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Variant Matrix tab&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Click on Variant Matrix tab" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,252" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on another Open option&quot;]" />
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,214.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on Open command" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="Click_22" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0c1e86ad-18ae-4abe-b57a-cc78f4a88c54" InformativeScreenshot="837719d8ce5f307b2aa6fa8a62e560ad" Selector="&lt;webctrl aria-role='button' tag='LI' visibleinnertext='Open' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Click.Target>
+                  </ui:Click>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selected Product Line Open successfully&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Variant Matrix tab&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Click on Variant Matrix tab" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -290,8 +518,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Content tab&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Click on Content tab" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Content tab&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Click on Content tab" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -313,8 +541,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Variant Matrix tab&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Click on Variant Matrix tab" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Variant Matrix tab&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Click on Variant Matrix tab" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -336,8 +564,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Part on which Substitute is added&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Select Part" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Part on which Substitute is added&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Select Part" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -359,8 +587,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on 'Add' command on Right wall &quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on Add command on Right wall" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on 'Add' command on Right wall &quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Click on Add command on Right wall" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -382,8 +610,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting 'Add Substitute' from options&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1500" DisplayName="Add Substitute" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting 'Add Substitute' from options&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2000" DisplayName="Add Substitute" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -405,8 +633,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on 'Pallette' tab of Add Substitute Panel&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1500" DisplayName="Palette tab" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on 'Pallette' tab of Add Substitute Panel&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="2500" DisplayName="Palette tab" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -428,31 +656,9 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Substitute from Palette tab&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1000" DisplayName="Selecting Substitute" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c02ad394-88dc-4e27-a9cb-3e89e6e853e3" InformativeScreenshot="63921c41b5fa27893fac873aab3a62c9" Selector="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='LABEL' /&gt;&quot;, in_Substitute_ID)]">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Add button under Palette tab on Add Substitute Panel&quot;]" />
-            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DelayMS="1500" DisplayName="Click on Add button from Panel" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Selecting Substitute from Palette tab&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,184.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicking on Add button under Palette tab on Add Substitute Panel&quot;]" />
+            <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1500" DelayMS="2500" DisplayName="Click on Add button from Panel" sap:VirtualizedContainerService.HintSize="450,147.33333333333334" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -474,7 +680,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Substitute added successfully.&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Substitute added successfully.&quot;]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>
@@ -485,7 +691,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <TryCatch DisplayName="Try Catch -- Sign Out" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch -- Sign Out" sap:VirtualizedContainerService.HintSize="546,94" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -523,7 +729,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="450,76.66666666666667" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="chrome.exe">
+    <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="546,76.66666666666667" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="chrome.exe">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
